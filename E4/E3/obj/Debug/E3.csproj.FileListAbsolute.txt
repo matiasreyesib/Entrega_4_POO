@@ -1,0 +1,32 @@
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.csprojAssemblyReference.cache
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.Form1.resources
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.Properties.Resources.resources
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.csproj.GenerateResource.cache
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.csproj.CoreCompileInputs.cache
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\bin\Debug\E3.exe.config
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\bin\Debug\E3.exe
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\bin\Debug\E3.pdb
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.exe
+C:\Users\matia\Desktop\Proyecto_Final\E3\E3\obj\Debug\E3.pdb
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.exe.config
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.exe
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.pdb
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csprojAssemblyReference.cache
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Form1.resources
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Inicio.resources
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Properties.Resources.resources
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csproj.GenerateResource.cache
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csproj.CoreCompileInputs.cache
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.exe
+C:\Users\matia\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.pdb
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.exe.config
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.exe
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\bin\Debug\E3.pdb
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csprojAssemblyReference.cache
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Form1.resources
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Inicio.resources
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.Properties.Resources.resources
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csproj.GenerateResource.cache
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.csproj.CoreCompileInputs.cache
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.exe
+C:\Users\Ale Izquierdo\Desktop\Entrega_MA\E3\E3\obj\Debug\E3.pdb
