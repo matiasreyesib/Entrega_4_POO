@@ -15,7 +15,7 @@ namespace E3
     {
         List<Button> listaBotones;
         Button[,] matrizBotones;
-
+        List<Bitmon> bithala = new List<Bitmon>();
         Mapa mapa = new Mapa(IntercambioDatos.filas, IntercambioDatos.columnas);
         
         public int nada = 0;
@@ -144,15 +144,18 @@ namespace E3
                         if ((celda.bitmons_celda[0].Get_Especie() == "wetar" && celda.bitmons_celda[1].Get_Especie() == "dorvalo"))
                         {
                             ndor += 1;
+                            bithala.Add(celda.bitmons_celda[0]);
                             celda.bitmons_celda.RemoveAt(0);
                         }
                         else if ((celda.bitmons_celda[0].Get_Especie() == "dorvalo" && celda.bitmons_celda[1].Get_Especie() == "wetar"))
                         {
                             ndor += 1;
+                            bithala.Add(celda.bitmons_celda[1]);
                             celda.bitmons_celda.RemoveAt(1);
                         }
                         else
                         {
+                            bithala.Add(celda.bitmons_celda[0]);
                             celda.bitmons_celda.RemoveAt(0);
                         }
                     }
@@ -198,7 +201,9 @@ namespace E3
             ndor = 0;
             ndot = 0;
             ne = 0;
-            
+            //List<Bitmon> bithala = new List<Bitmon>();
+           // List<Bitmon> habitantes = new List<Bitmon>();
+
             // Recorremos cada celda para lograr el movimiento del bitmon, su reproduccion, las peleas, etc.
             for (int fila = 0; fila < mapa.filas_mapa; fila++)
             {
@@ -208,7 +213,22 @@ namespace E3
                     Terreno terreno = celda.tipo_terreno;
                     // Utilizamos el borrador para facilitar la accion de moverse del bitmon
                     List<Bitmon> Borrador_Bitmons_Celda = new List<Bitmon>();
-                    
+
+                    //---------envejecen y mueren de viejos, se agregan al Bithala---------------------
+                    foreach (Bitmon biti in celda.bitmons_celda)
+                    {
+                        int n = 0;
+                        biti.ReducirPuntosDeVida(-1);
+                        if (biti.Get_TiempoDeVida() <= 0)
+                        {
+                            bithala.Add(biti);
+                            mapa.mapa[fila, columna].bitmons_celda.RemoveAt(n);
+                            n += 1;
+                        }
+
+                    }
+
+
                     //
                     //
                     // Para cuando hay 1 Bitmon en la lista de bitmons de la celda
