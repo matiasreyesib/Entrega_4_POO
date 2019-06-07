@@ -9,7 +9,7 @@ namespace E3
     class Ent : Bitmon
     {
         Random rnd = new Random();
-        new int tiempoDeVida = 0;
+        new int tiempoDeVida;
         new int posx;
         new int posy;
 
@@ -28,11 +28,11 @@ namespace E3
         }
 
         // Reduce el tiempo de vida mientras pasan los meses
-        public override void ReducirTiempoDeVida()
+        public override void ReducirTiempoDeVida(int numero)
         {
             if (tiempoDeVida > 0)
             {
-                tiempoDeVida -= 1;
+                tiempoDeVida -= numero;
             }
             else
             {

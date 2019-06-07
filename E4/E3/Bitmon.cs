@@ -57,7 +57,7 @@ namespace E3
 
 
         // Reduce el tiempo de vida mientras pasan los meses
-        public abstract void ReducirTiempoDeVida();
+        public abstract void ReducirTiempoDeVida(int numero);
 
 
         // Reduce los puntos de vida por algun ataque

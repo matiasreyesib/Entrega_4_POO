@@ -17,7 +17,7 @@ namespace E3
         Button[,] matrizBotones;
         List<Bitmon> bithala = new List<Bitmon>();
         Mapa mapa = new Mapa(IntercambioDatos.filas, IntercambioDatos.columnas);
-        
+
         public int nada = 0;
         int nt = 0;
         int nw = 0;
@@ -25,12 +25,15 @@ namespace E3
         int ndor = 0;
         int ndot = 0;
         int ne = 0;
-    
+        int meses = 0;
+
         public Form1()
         {
+            //label13.Text = Convert.ToString(bithala.Count);
             InitializeComponent();
             matrizBotones = new Button[mapa.filas_mapa, mapa.columnas_mapa];
             listaBotones = new List<Button>();
+            label13.Text = Convert.ToString(bithala.Count);
             /*
             nt = mapa.n_taplan;
             nw = mapa.n_wetar;
@@ -44,7 +47,7 @@ namespace E3
             {
                 for (int columna = 0; columna < mapa.columnas_mapa; columna++)
                 {
-                    Random random = new Random(); 
+                    Random random = new Random();
                     Button button = new Button();
                     button.Dock = DockStyle.Fill;
                     button.Margin = new Padding(0, 0, 0, 0);
@@ -138,7 +141,10 @@ namespace E3
                     }
                     ///////////////////////
                     ///////////////////////
-                    ///////////////////////
+    ///////////////////////--------------Acciones------------------------------------------------------
+    ///
+    /// 
+    ///---------------------------------pelear------------------------------------------------------
                     else if ((celda.bitmons_celda.Count > 1) && (celda.bitmons_celda.Count < 3))
                     {
                         if ((celda.bitmons_celda[0].Get_Especie() == "wetar" && celda.bitmons_celda[1].Get_Especie() == "dorvalo"))
@@ -174,7 +180,7 @@ namespace E3
          * 
          * 
          */
-         
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -185,24 +191,38 @@ namespace E3
         {
             Application.Restart();
         }
-        
+
 
         private void boton_salir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hasta luego!");
+            MessageBox.Show("Hasta luego");
             Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label13.Text = Convert.ToString(bithala.Count);
+            label13.Refresh();
             nt = 0;
             nw = 0;
             ng = 0;
             ndor = 0;
             ndot = 0;
             ne = 0;
+            meses += 1;
+
+            if (meses%3 == 0)
+            {
+                Random ran = new Random();
+                int ran1 =ran.Next(0, mapa.filas_mapa);
+                int ran2 = ran.Next(0, mapa.columnas_mapa);
+
+                Ent ent = new Ent(ran1, ran2, 10);
+                mapa.mapa[ran1, ran2].AgregarBitmon(ent);
+
+            }
             //List<Bitmon> bithala = new List<Bitmon>();
-           // List<Bitmon> habitantes = new List<Bitmon>();
+            // List<Bitmon> habitantes = new List<Bitmon>();
 
             // Recorremos cada celda para lograr el movimiento del bitmon, su reproduccion, las peleas, etc.
             for (int fila = 0; fila < mapa.filas_mapa; fila++)
@@ -218,7 +238,7 @@ namespace E3
                     foreach (Bitmon biti in celda.bitmons_celda)
                     {
                         int n = 0;
-                        biti.ReducirPuntosDeVida(-1);
+                        biti.ReducirPuntosDeVida(1);
                         if (biti.Get_TiempoDeVida() <= 0)
                         {
                             bithala.Add(biti);
@@ -606,6 +626,12 @@ namespace E3
             cant_dorvalo.Text = Convert.ToString(ndor);
             cant_doti.Text = Convert.ToString(ndot);
             cant_ent.Text = Convert.ToString(ne);
+        }
+        
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

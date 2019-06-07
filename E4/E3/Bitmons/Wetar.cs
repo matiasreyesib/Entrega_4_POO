@@ -17,7 +17,7 @@ namespace E3
         new int cantidadDeHijos;
         */
         Random rnd = new Random();
-        new int tiempoDeVida = 0;
+        new int tiempoDeVida;
         new int posx;
         new int posy;
 
@@ -34,11 +34,11 @@ namespace E3
             return tiempoDeVida;
         }
         // Reduce el tiempo de vida mientras pasan los meses
-        public override void ReducirTiempoDeVida()
+        public override void ReducirTiempoDeVida(int numero)
         {
             if (tiempoDeVida > 0)
             {
-                tiempoDeVida -= 1;
+                tiempoDeVida -= numero;
             }
             else
             {
