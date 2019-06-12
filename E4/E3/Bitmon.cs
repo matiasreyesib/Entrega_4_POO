@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E3
 {
-    abstract class Bitmon
+    public abstract class Bitmon
     {
         Random rnd = new Random();
         protected int tiempoDeVida;

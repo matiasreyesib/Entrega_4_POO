@@ -49,6 +49,12 @@
     <Compile Include="Bitmons\Doti.cs" />
     <Compile Include="Bitmons\Ent.cs" />
     <Compile Include="Bitmons\Gofue.cs" />
+    <Compile Include="DatosFinales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosFinales.Designer.cs">
+      <DependentUpon>DatosFinales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Terrenos\Vegetacion.cs" />
     <Compile Include="Terrenos\Volcan.cs" />
     <Compile Include="Bitmons\Wetar.cs" />
+    <EmbeddedResource Include="DatosFinales.resx">
+      <DependentUpon>DatosFinales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

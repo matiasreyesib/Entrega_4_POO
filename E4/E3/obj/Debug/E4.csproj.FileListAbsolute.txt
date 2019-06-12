@@ -9,3 +9,4 @@ C:\Users\Ale Izquierdo\Desktop\Entrega_4_POO\E4\E3\obj\Debug\E4.csproj.GenerateR
 C:\Users\Ale Izquierdo\Desktop\Entrega_4_POO\E4\E3\obj\Debug\E4.csproj.CoreCompileInputs.cache
 C:\Users\Ale Izquierdo\Desktop\Entrega_4_POO\E4\E3\obj\Debug\E3.exe
 C:\Users\Ale Izquierdo\Desktop\Entrega_4_POO\E4\E3\obj\Debug\E3.pdb
+C:\Users\Ale Izquierdo\Desktop\Entrega_4_POO\E4\E3\obj\Debug\E3.DatosFinales.resources

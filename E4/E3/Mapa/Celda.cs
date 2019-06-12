@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace E3
 {
-    class Celda
+    public class Celda
     {
         public Terreno tipo_terreno;
         public List<Bitmon> bitmons_celda = new List<Bitmon>();
+        //public Bitmon bitmons_mapa;
 
         public Celda(int al)
         {

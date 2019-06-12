@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E3
 {
-    class Terreno
+    public class Terreno
     {
         protected string tipo_terreno;
 

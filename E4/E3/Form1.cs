@@ -27,21 +27,25 @@ namespace E3
         int ne = 0;
         int meses = 0;
 
-        public Form1()
+        int ntf = 0;
+        int nwf = 0;
+        int ngf = 0;
+        int ndorf = 0;
+        int ndotf = 0;
+        int nef = 0;
+        int Dato;
+
+
+        public Form1(int Dato)
         {
+            Dato = Dato;
             //label13.Text = Convert.ToString(bithala.Count);
             InitializeComponent();
             matrizBotones = new Button[mapa.filas_mapa, mapa.columnas_mapa];
             listaBotones = new List<Button>();
-            label13.Text = Convert.ToString(bithala.Count);
-            /*
-            nt = mapa.n_taplan;
-            nw = mapa.n_wetar;
-            ng = mapa.n_gofue;
-            ndor = mapa.n_dorvalo;
-            ndot = mapa.n_doti;
-            ne = mapa.n_ent;
-            */
+            //label13.Text = Convert.ToString(bithala.Count);
+
+           
 
             for (int fila = 0; fila < mapa.filas_mapa; fila++)
             {
@@ -195,14 +199,17 @@ namespace E3
 
         private void boton_salir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hasta luego");
-            Application.Exit();
+            DatosFinales dt = new DatosFinales(nt, nw, ng, ndor, ndot, ne, bithala.Count, Dato, mapa);
+            dt.Show();
+            
         }
+
+        //-------------- mes de juego--------------------------
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label13.Text = Convert.ToString(bithala.Count);
-            label13.Refresh();
+            //label13.Text = Convert.ToString(bithala.Count);
+            //label13.Refresh();
             nt = 0;
             nw = 0;
             ng = 0;
@@ -210,6 +217,7 @@ namespace E3
             ndot = 0;
             ne = 0;
             meses += 1;
+        
 
             if (meses%3 == 0)
             {
@@ -219,6 +227,8 @@ namespace E3
 
                 Ent ent = new Ent(ran1, ran2, 10);
                 mapa.mapa[ran1, ran2].AgregarBitmon(ent);
+                mapa.bitmons_mapa.Add(ent);
+
 
             }
             //List<Bitmon> bithala = new List<Bitmon>();
@@ -526,26 +536,32 @@ namespace E3
                         if (celda.bitmons_celda[1].Get_Especie() == "taplan")
                         {
                             nt += 1;
+                            
                         }
                         else if (celda.bitmons_celda[1].Get_Especie() == "wetar")
                         {
                             nw += 1;
+                            
                         }
                         else if (celda.bitmons_celda[1].Get_Especie() == "gofue")
                         {
                             ng += 1;
+                            
                         }
                         else if (celda.bitmons_celda[1].Get_Especie() == "dorvalo")
                         {
                             ndor += 1;
+                            
                         }
                         else if (celda.bitmons_celda[1].Get_Especie() == "doti")
                         {
                             ndot += 1;
+                            
                         }
                         else if (celda.bitmons_celda[1].Get_Especie() == "ent")
                         {
                             nt += 1;
+                            
                         }
                         else
                         {
@@ -622,7 +638,7 @@ namespace E3
         {
             cant_taplan.Text = Convert.ToString(nt);
             cant_wetar.Text = Convert.ToString(nw);
-            cant_gofue.Text = Convert.ToString(nt);
+            cant_gofue.Text = Convert.ToString(ng);
             cant_dorvalo.Text = Convert.ToString(ndor);
             cant_doti.Text = Convert.ToString(ndot);
             cant_ent.Text = Convert.ToString(ne);
@@ -630,6 +646,11 @@ namespace E3
         
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

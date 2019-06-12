@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E3
 {
-    class Mapa
+    public class Mapa
     {
         public int filas_mapa;
         public int columnas_mapa;
@@ -15,12 +15,15 @@ namespace E3
         Random random = new Random();
         int bitmonsIniciales = IntercambioDatos.bitmonsIniciales;
 
+
+
         public Mapa(int filas_mapa, int columnas_mapa)
         {
             this.filas_mapa = filas_mapa;
             this.columnas_mapa = columnas_mapa;
             mapa = new Celda[filas_mapa, columnas_mapa];
             CreacionMapa();
+
             // en su constructor hago que se inicie el mapa
             // al iniciarce el mapa se crea un mapa de celdas, las cuales tienen un tipo de terreno asociado
             // hago que se creen los bitmons
@@ -35,12 +38,13 @@ namespace E3
                 {
                     int al = random.Next(0, 5);
                     mapa[fila, columna] = new Celda(al);
+                    
                 }
             }
             CrearBitmon(bitmonsIniciales);
         }
 
-        // Metodo para crear los Bitmons en el Mapa
+ //---------------------- Metodo para crear los Bitmons en el Mapa----------------------
         public void CrearBitmon(int bitmonsIniciales)
         {
             int contador = 0;
@@ -58,6 +62,7 @@ namespace E3
                     {
                         Wetar bitmon = new Wetar(fila, columna, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
+                        bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else
@@ -69,12 +74,14 @@ namespace E3
                 {
                     Dorvalo bitmon = new Dorvalo(fila, columna, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
+                    bitmons_mapa.Add(bitmon);
                     contador +=1;
                 }
                 else if (al_bit == 2)
                 {
                     Doti bitmon = new Doti(fila, columna, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
+                    bitmons_mapa.Add(bitmon);
                     contador += 1;
                 }
                 else if (al_bit == 3)
@@ -83,18 +90,21 @@ namespace E3
                     {
                         Ent bitmon = new Ent(fila, columna, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
+                        bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "desierto")
                     {
                         Ent bitmon = new Ent(fila, columna, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
+                        bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "nieve")
                     {
                         Ent bitmon = new Ent(fila, columna, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
+                        bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else
@@ -107,12 +117,14 @@ namespace E3
                 {
                     Gofue bitmon = new Gofue(fila, columna, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
+                    bitmons_mapa.Add(bitmon);
                     contador += 1;
                 }
                 else if (al_bit == 5)
                 {
                     Taplan bitmon = new Taplan(fila, columna, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
+                    bitmons_mapa.Add(bitmon);
                     contador += 1;
                 }
                 else

@@ -24,8 +24,8 @@ namespace E3
                 IntercambioDatos.filas = Convert.ToInt32(comboBox1.SelectedItem);
                 IntercambioDatos.columnas = Convert.ToInt32(comboBox2.SelectedItem);
                 IntercambioDatos.bitmonsIniciales = Convert.ToInt32(comboBox3.SelectedItem);
-
-                Form1 Form1 = new Form1();
+                int Dato = Convert.ToInt32(comboBox3.SelectedItem);
+                Form1 Form1 = new Form1(Dato);
                 Form1.Show();
                 this.Hide();
             }
