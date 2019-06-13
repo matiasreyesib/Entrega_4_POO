@@ -10,6 +10,7 @@ namespace E3
     {
         Random rnd = new Random();
         protected int tiempoDeVida;
+        protected int esperanzaVida;
         protected int puntosDeVida;
         protected int puntosDeAtaque;
         protected string especie;
@@ -19,6 +20,8 @@ namespace E3
 
 
         public abstract int Get_TiempoDeVida();
+
+        public abstract int Get_esperanza();
 
 
         // Desde aca meto los metodos de la entrega pasada

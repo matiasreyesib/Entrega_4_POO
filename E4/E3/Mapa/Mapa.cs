@@ -60,7 +60,7 @@ namespace E3
                 {
                     if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "acuatico")
                     {
-                        Wetar bitmon = new Wetar(fila, columna, tiempoDeVida);
+                        Wetar bitmon = new Wetar(fila, columna, tiempoDeVida, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
                         bitmons_mapa.Add(bitmon);
                         contador += 1;
@@ -72,14 +72,14 @@ namespace E3
                 }
                 else if (al_bit == 1)
                 {
-                    Dorvalo bitmon = new Dorvalo(fila, columna, tiempoDeVida);
+                    Dorvalo bitmon = new Dorvalo(fila, columna, tiempoDeVida, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
                     bitmons_mapa.Add(bitmon);
                     contador +=1;
                 }
                 else if (al_bit == 2)
                 {
-                    Doti bitmon = new Doti(fila, columna, tiempoDeVida);
+                    Doti bitmon = new Doti(fila, columna, tiempoDeVida, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
                     bitmons_mapa.Add(bitmon);
                     contador += 1;
@@ -88,21 +88,21 @@ namespace E3
                 {
                     if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "vegetacion")
                     {
-                        Ent bitmon = new Ent(fila, columna, tiempoDeVida);
+                        Ent bitmon = new Ent(fila, columna, tiempoDeVida, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
                         bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "desierto")
                     {
-                        Ent bitmon = new Ent(fila, columna, tiempoDeVida);
+                        Ent bitmon = new Ent(fila, columna, tiempoDeVida, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
                         bitmons_mapa.Add(bitmon);
                         contador += 1;
                     }
                     else if (mapa[fila, columna].tipo_terreno.Get_Terreno() == "nieve")
                     {
-                        Ent bitmon = new Ent(fila, columna, tiempoDeVida);
+                        Ent bitmon = new Ent(fila, columna, tiempoDeVida, tiempoDeVida);
                         mapa[fila, columna].AgregarBitmon(bitmon);
                         bitmons_mapa.Add(bitmon);
                         contador += 1;
@@ -115,14 +115,14 @@ namespace E3
                 }
                 else if (al_bit == 4)
                 {
-                    Gofue bitmon = new Gofue(fila, columna, tiempoDeVida);
+                    Gofue bitmon = new Gofue(fila, columna, tiempoDeVida, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
                     bitmons_mapa.Add(bitmon);
                     contador += 1;
                 }
                 else if (al_bit == 5)
                 {
-                    Taplan bitmon = new Taplan(fila, columna, tiempoDeVida);
+                    Taplan bitmon = new Taplan(fila, columna, tiempoDeVida, tiempoDeVida);
                     mapa[fila, columna].AgregarBitmon(bitmon);
                     bitmons_mapa.Add(bitmon);
                     contador += 1;

@@ -12,15 +12,21 @@ namespace E3
         new int tiempoDeVida;
         new int posx;
         new int posy;
+        new int esperanzaVida;
 
         // Al constructor dedl bitmons le metemos los parametros de su ubicacion para que el bitmon los guarde
-        public Dorvalo(int posx, int posy, int tiempoDeVida)
+        public Dorvalo(int posx, int posy, int tiempoDeVida, int esperanzavida)
         {
             this.posx = posx;
             this.posy = posy;
             this.tiempoDeVida = tiempoDeVida;
+            this.esperanzaVida = esperanzaVida;
         }
 
+        public override int Get_esperanza()
+        {
+            return esperanzaVida;
+        }
         // Para obtener el tiempo de vida del bitmon
         public override int Get_TiempoDeVida()
         {

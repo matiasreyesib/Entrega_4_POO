@@ -225,7 +225,7 @@ namespace E3
                 int ran1 =ran.Next(0, mapa.filas_mapa);
                 int ran2 = ran.Next(0, mapa.columnas_mapa);
 
-                Ent ent = new Ent(ran1, ran2, 10);
+                Ent ent = new Ent(ran1, ran2, 10, 10);
                 mapa.mapa[ran1, ran2].AgregarBitmon(ent);
                 mapa.bitmons_mapa.Add(ent);
 
@@ -652,7 +652,7 @@ namespace E3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
