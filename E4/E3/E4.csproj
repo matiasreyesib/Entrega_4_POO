@@ -168,5 +168,11 @@
   <ItemGroup>
     <None Include="Resources\fototierra.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dato.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Datos.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

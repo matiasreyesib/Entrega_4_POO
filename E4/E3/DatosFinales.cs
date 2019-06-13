@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace E3
 {
@@ -24,7 +25,7 @@ namespace E3
             label6.Text = Convert.ToString(ne);
 
             label14.Text = Convert.ToString(mapa.bitmons_mapa.Count());
-            label15.Text = Convert.ToString(mapa.bitmons_mapa.Count() - nt - nw - ng - ndor - ndot - ne);
+            label15.Text = Convert.ToString(mapa.bitmons_mapa.Count() - (nt + nw+ ng + ndor + ndot + ne));
             //-------------vida total ------------------------------------
             int vta = 0;
             int vw = 0;
@@ -166,7 +167,47 @@ namespace E3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tus Bitmons acaban de morir de pena porque te vas, hasta nunca");
+
+
+            // Create a file to write to.
+            // using (StreamWriter datos = File.Create(Properties.Resources.))
+            // {
+            TextWriter datos;
+            datos = new StreamWriter("dato.txt");
+                    datos.WriteLine("datosactuales");
+                    datos.WriteLine(label1.Text);
+                    datos.WriteLine(label2.Text);
+                    datos.WriteLine(label3.Text);
+                    datos.WriteLine(label4.Text);
+                    datos.WriteLine(label5.Text);
+                    datos.WriteLine(label6.Text);
+                    datos.WriteLine(label12.Text);
+                    datos.WriteLine(label13.Text);
+                    datos.WriteLine(label4.Text);
+                    datos.WriteLine("datos natalidad y mortalidad");
+                    datos.WriteLine(label5.Text);
+                    datos.WriteLine(label6.Text);
+                    datos.WriteLine("esperanza de vida");
+                    datos.WriteLine(label32.Text);
+                    datos.WriteLine(label31.Text);
+                    datos.WriteLine(label30.Text);
+                    datos.WriteLine(label29.Text);
+                    datos.WriteLine(label28.Text);
+                    datos.WriteLine(label27.Text);
+                    datos.WriteLine(label19.Text);
+                    datos.WriteLine (label7.Text);
+
+                //}
+            
+            
+                // StreamWriter datos = new StreamWriter(Properties.Resources.Datos.txt);
+                //File.WriteAllText('dato.txt', 'datosactuales');
+               
+
+
+
+
+                MessageBox.Show("Tus Bitmons acaban de morir de pena porque te vas, hasta nunca");
             FormCollection formulariosApp = Application.OpenForms;
             try
             {
