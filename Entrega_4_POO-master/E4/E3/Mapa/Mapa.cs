@@ -66,6 +66,7 @@ namespace E3
                         mapa[fila, columna].AgregarBitmon(bitmon);
                         bitmons_mapa.Add(bitmon);
                         bitmons_mapa_total.Add(bitmon);
+                        ;
                         IntercambioDatos.numero_wetar += 1;
                         contador += 1;
                     }

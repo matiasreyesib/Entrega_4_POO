@@ -23,8 +23,8 @@ namespace E3
             label5.Text = Convert.ToString(ndot);
             label6.Text = Convert.ToString(ne);
 
-            label14.Text = Convert.ToString(mapa.bitmons_mapa.Count());
-            label15.Text = Convert.ToString(mapa.bithalla.Count);
+            label14.Text = Convert.ToString(mapa.bitmons_mapa_total.Count());
+            label15.Text = Convert.ToString(mapa.bitmons_mapa_total.Count()- (nt +nw +ng +ndor +ndot +ne));
             //-------------vida total ------------------------------------
             int vta = 0;
             int vw = 0;
@@ -41,7 +41,7 @@ namespace E3
             int cen = 0;
             int n1 = 0;
 
-            foreach (Bitmon bit in mapa.bitmons_mapa)
+            foreach (Bitmon bit in mapa.bitmons_mapa_total)
             {
                 if (bit.Get_Especie() == "taplan")
                 {
@@ -191,6 +191,16 @@ namespace E3
 
         }
         private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
         {
 
         }

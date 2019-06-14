@@ -592,6 +592,46 @@ namespace E3
                     }
                 }
             }
+            int n_taplan = 0;
+            int n_wetar = 0;
+            int n_gofue = 0;
+            int n_dorvalo = 0;
+            int n_doti = 0;
+            int n_ent = 0;
+
+            foreach (Bitmon b in mapa.bitmons_mapa)
+            {
+                if (b.Get_Especie() == "taplan")
+                {
+                    n_taplan += 1;
+                }
+                else if (b.Get_Especie() == "wetar")
+                {
+                    n_wetar += 1;
+                }
+                else if (b.Get_Especie() == "gofue")
+                {
+                    n_gofue += 1;
+                }
+                else if (b.Get_Especie() == "dorvalo")
+                {
+                    n_dorvalo += 1;
+                }
+                else if (b.Get_Especie() == "doti")
+                {
+                    n_doti += 1;
+                }
+                else if (b.Get_Especie() == "ent")
+                {
+                    n_ent += 1;
+                }
+            }
+            nt = n_taplan;
+            nw = n_wetar;
+            ng = n_gofue;
+            ndor = n_dorvalo;
+            ndot =n_doti;
+            ne = n_ent;
         }
 
         
