@@ -13,10 +13,11 @@ namespace E3
 {
     public partial class Form1 : Form
     {
+        public event Action OnCambio;
 
         List<Button> listaBotones;
         Button[,] matrizBotones;
-        Mapa mapa = new Mapa(IntercambioDatos.filas, IntercambioDatos.columnas);
+        public Mapa mapa = new Mapa(IntercambioDatos.filas, IntercambioDatos.columnas);
         
 
         public int nada = 0;
@@ -135,34 +136,41 @@ namespace E3
                     // Cuando al inicio hay dos bitmons en una celda
                     else if ((celda.bitmons_celda.Count > 1) && (celda.bitmons_celda.Count < 3))
                     {
-                        if ((celda.bitmons_celda[0].Get_Especie() == "wetar" && celda.bitmons_celda[1].Get_Especie() == "dorvalo"))
+                        if ((celda.bitmons_celda[0].Get_Especie() == "wetar" && celda.bitmons_celda[1].Get_Especie() == "taplan") || (celda.bitmons_celda[0].Get_Especie() == "taplan" && celda.bitmons_celda[1].Get_Especie() == "wetar"))
                         {
-                            celda.bitmons_celda.RemoveAt(0);
-                            mapa.bithalla.Add(celda.bitmons_celda[0]);
-                            foreach (Bitmon b in mapa.bitmons_mapa)
-                            {
-                                if (b.Get_Especie() == "wetar")
-                                {
-                                    mapa.bitmons_mapa.Remove(b);
-                                }
-                            }
+                            mapa.CrearBitmon_Reproduccion();
                         }
-                        else if ((celda.bitmons_celda[0].Get_Especie() == "dorvalo" && celda.bitmons_celda[1].Get_Especie() == "wetar"))
+                        else if ((celda.bitmons_celda[0].Get_Especie() == "ent" && celda.bitmons_celda[1].Get_Especie() == "taplan") || (celda.bitmons_celda[0].Get_Especie() == "taplan" && celda.bitmons_celda[1].Get_Especie() == "ent"))
                         {
-                            celda.bitmons_celda.RemoveAt(1);
-                            mapa.bithalla.Add(celda.bitmons_celda[1]);
-                            foreach (Bitmon b in mapa.bitmons_mapa)
-                            {
-                                if (b.Get_Especie() == "wetar")
-                                {
-                                    mapa.bitmons_mapa.Remove(b);
-                                }
-                            }
+                            mapa.CrearBitmon_Reproduccion();
+                        }
+                        else if ((celda.bitmons_celda[0].Get_Especie() == "doti" && celda.bitmons_celda[1].Get_Especie() == "taplan") || (celda.bitmons_celda[0].Get_Especie() == "taplan" && celda.bitmons_celda[1].Get_Especie() == "doti"))
+                        {
+                            mapa.CrearBitmon_Reproduccion();
+                        }
+                        else if ((celda.bitmons_celda[0].Get_Especie() == "wetar" && celda.bitmons_celda[1].Get_Especie() == "doti") || (celda.bitmons_celda[0].Get_Especie() == "doti" && celda.bitmons_celda[1].Get_Especie() == "wetar"))
+                        {
+                            mapa.CrearBitmon_Reproduccion();
+                        }
+                        else if ((celda.bitmons_celda[0].Get_Especie() == "doti" && celda.bitmons_celda[1].Get_Especie() == "ent") || (celda.bitmons_celda[0].Get_Especie() == "ent" && celda.bitmons_celda[1].Get_Especie() == "doti"))
+                        {
+                            mapa.CrearBitmon_Reproduccion();
+                        }
+                        else if ((celda.bitmons_celda[0].Get_Especie() == "dorvalo" && celda.bitmons_celda[1].Get_Especie() == "gofue") || (celda.bitmons_celda[0].Get_Especie() == "gofue" && celda.bitmons_celda[1].Get_Especie() == "dorvalo"))
+                        {
+                            mapa.CrearBitmon_Reproduccion();
                         }
                         else
                         {
-                            celda.bitmons_celda.RemoveAt(0);
-                            mapa.bitmons_mapa.RemoveAt(0);
+                            mapa.mapa[fila, columna].bitmons_celda.RemoveAt(0);
+                            mapa.bithalla.Add(celda.bitmons_celda[0]);
+                            for (int i = 0; i < mapa.bitmons_mapa.Count; i++)
+                            {
+                                if (mapa.bitmons_mapa[i].Get_Especie() == celda.bitmons_celda[0].Get_Especie())
+                                {
+                                    mapa.bitmons_mapa.RemoveAt(i);
+                                }
+                            }
                         }
                     }
                 }
@@ -203,31 +211,7 @@ namespace E3
                     Terreno terreno = celda.tipo_terreno;
                     List<Bitmon> Borrador_Bitmons_Celda = new List<Bitmon>();
                     // Utilizamos el borrador para facilitar la accion de moverse del bitmon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    
                     //---------Envejecen y mueren de viejos, se agregan al Bithala---------------------
                     for (int i = 0; i < celda.bitmons_celda.Count; i++)
                     {
@@ -235,51 +219,8 @@ namespace E3
                         if (celda.bitmons_celda[i].Get_TiempoDeVida() <= 0)
                         {
                             mapa.bithalla.Add(celda.bitmons_celda[i]);
-                            /*
-                            if (mapa.bitmons_mapa[i].Get_Especie() == "taplan")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            else if (mapa.bitmons_mapa[i].Get_Especie() == "wetar")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            else if (mapa.bitmons_mapa[i].Get_Especie() == "gofue")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            else if (mapa.bitmons_mapa[i].Get_Especie() == "dorvalo")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            else if (mapa.bitmons_mapa[i].Get_Especie() == "doti")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            else if (mapa.bitmons_mapa[i].Get_Especie() == "ent")
-                            {
-                                mapa.bitmons_mapa.RemoveAt(i);
-                            }
-                            */
                         }
                     }
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     // Para cuando hay 1 Bitmon en la lista de bitmons de la celda
                     if (celda.bitmons_celda.Count > 0 && celda.bitmons_celda.Count < 2)
@@ -639,35 +580,35 @@ namespace E3
         private void button2_Click(object sender, EventArgs e)
         {
             int n_taplan = 0;
-            int n_wetar= 0;
+            int n_wetar = 0;
             int n_gofue = 0;
             int n_dorvalo = 0;
             int n_doti = 0;
             int n_ent = 0;
 
-            foreach (Bitmon b in mapa.bitmons_mapa)
+            for (int i = 0; i < mapa.bitmons_mapa.Count; i++)
             {
-                if (b.Get_Especie() == "taplan")
+                if (mapa.bitmons_mapa[i].Get_Especie() == "taplan")
                 {
                     n_taplan += 1;
                 }
-                else if (b.Get_Especie() == "wetar")
+                else if (mapa.bitmons_mapa[i].Get_Especie() == "wetar")
                 {
                     n_wetar += 1;
                 }
-                else if (b.Get_Especie() == "gofue")
+                else if (mapa.bitmons_mapa[i].Get_Especie() == "gofue")
                 {
                     n_gofue += 1;
                 }
-                else if (b.Get_Especie() == "dorvalo")
+                else if (mapa.bitmons_mapa[i].Get_Especie() == "dorvalo")
                 {
                     n_dorvalo += 1;
                 }
-                else if (b.Get_Especie() == "doti")
+                else if (mapa.bitmons_mapa[i].Get_Especie() == "doti")
                 {
                     n_doti += 1;
                 }
-                else if (b.Get_Especie() == "ent")
+                else if (mapa.bitmons_mapa[i].Get_Especie() == "ent")
                 {
                     n_ent += 1;
                 }
@@ -679,19 +620,8 @@ namespace E3
             cant_doti.Text = Convert.ToString(n_doti);
             cant_ent.Text = Convert.ToString(n_ent);
         }
-
-        public void BitmonsPorEspecie()
-        {
-            for (int fila = 0; fila < mapa.filas_mapa; fila++)
-            {
-                for (int columna = 0; columna < mapa.columnas_mapa; columna++)
-                {
-
-                }
-            }
-        }
-
-
+        
+        
         private void label13_Click(object sender, EventArgs e)
         {
 

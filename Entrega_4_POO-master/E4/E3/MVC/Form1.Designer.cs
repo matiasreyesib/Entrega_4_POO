@@ -439,14 +439,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label cant_taplan;
-        private System.Windows.Forms.Label cant_wetar;
-        private System.Windows.Forms.Label cant_gofue;
-        private System.Windows.Forms.Label cant_dorvalo;
-        private System.Windows.Forms.Label cant_doti;
-        private System.Windows.Forms.Label cant_ent;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label cant_taplan;
+        public System.Windows.Forms.Label cant_wetar;
+        public System.Windows.Forms.Label cant_gofue;
+        public System.Windows.Forms.Label cant_dorvalo;
+        public System.Windows.Forms.Label cant_doti;
+        public System.Windows.Forms.Label cant_ent;
     }
 }
 
